@@ -1,0 +1,118 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>GreenLab | Dr. Abeer Alshammari, CISSP, CISM</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <main class="wrap">
+    <header class="top">
+      <a href="#home" class="brand">
+        <svg class="bulb" viewBox="0 0 48 48">
+          <path fill="#2ad59b" d="M24 4C14.6 4 7 11.5 7 20.7c0 6.2 3.2 10.2 7.3 13.8 1.5 1.3 2.2 3.1 2.2 5v.5h15v-.5c0-1.9.8-3.7 2.2-5C37.8 30.9 41 26.9 41 20.7 41 11.5 33.4 4 24 4Z"/>
+          <path fill="#087c5c" d="M18 41h12v2c0 1.1-.9 2-2 2h-8c-1.1 0-2-.9-2-2v-2Zm-1-6h14v4H17z"/>
+        </svg>
+        <b>GREEN</b>LAB
+      </a>
+      <div>
+        <button class="btn signin" id="login">Sign in</button>
+        <button class="btn" id="lang">العربية</button>
+      </div>
+    </header>
+
+    <div id="gamebar"></div>
+
+    <section class="hero" id="home">
+      <small id="tag">LEARN BY DOING</small>
+      <h1 id="head">Cybersecurity learning, made playful.</h1>
+      <p id="intro">Simple visual puzzles for safe cybersecurity practice.</p>
+    </section>
+
+    <nav class="nav">
+      <a href="#network">Network Security</a>
+      <a href="#paths">SOC · Cloud · AI · DevSecOps</a>
+    </nav>
+
+    <section class="section" id="network">
+      <h2 id="networkTitle">Network Security Puzzle</h2>
+      <p id="networkIntro">Drag each control to its best location in the network diagram.</p>
+      <div class="network">
+        <article class="panel">
+          <div class="board">
+            <div class="flow">
+              <div class="node">
+                <div class="cloud">☁ INTERNET</div>
+                <div class="drop" data-a="Firewall">Gateway</div>
+                <div class="device">📡</div><b>Router</b>
+              </div>
+              <div class="node">
+                <div class="device">🔀</div><b>Core switch</b>
+                <div class="drop" data-a="VLAN">Employee groups</div>
+              </div>
+              <div class="dmz">
+                DMZ AREA
+                <div class="drop" data-a="DMZ">Public services</div>
+                🌐 Web app &nbsp; 🗄️ Server
+                <div class="drop" data-a="WAF">Web protection</div>
+              </div>
+            </div>
+            <div class="floors">
+              <div class="floor">🖥️ Floor 1</div>
+              <div class="floor">💻 Floor 2</div>
+              <div class="floor">🧑‍💻 Floor 3</div>
+            </div>
+          </div>
+        </article>
+        <aside class="panel">
+          <h2 id="controlTitle">Security controls</h2>
+          <div id="cards"></div>
+          <button class="check" id="check">Check answer</button>
+          <div id="feedback"></div>
+        </aside>
+      </div>
+    </section>
+
+    <section class="section" id="paths">
+      <h2 id="pathTitle">Specialist learning paths</h2>
+      <div class="paths">
+        <a class="path" href="specialist-puzzles.html?path=soc">🔎 SOC Analyst<br><small>Alert triage</small></a>
+        <a class="path" href="specialist-puzzles.html?path=cloud">☁ Cloud Security<br><small>Data &amp; identity</small></a>
+        <a class="path" href="specialist-puzzles.html?path=ai">🤖 AI Security<br><small>Safe AI use</small></a>
+        <a class="path" href="specialist-puzzles.html?path=dev">⚙️ DevSecOps<br><small>Secure delivery</small></a>
+      </div>
+    </section>
+
+    <section class="section" id="leaderboard-section">
+      <h2>Leaderboard</h2>
+      <div class="panel" id="leaderboard"></div>
+    </section>
+
+    <footer class="about">
+      <b>Dr. Abeer Alshammari, CISSP, CISM</b><br>
+      IT Audit &amp; GRC Consultant focused on practical cybersecurity learning, governance, risk, and compliance.<br>
+      <a href="about.html">About the creator</a> ·
+      <a href="https://abeergrc.netlify.app/" target="_blank">Abeer GRC Platform</a> ·
+      <a href="https://dratech.netlify.app/" target="_blank">Dr. A Tech daily cybersecurity newsletter</a><br>
+      <span style="color:#66839c">© 2026 All rights reserved to Dr. Abeer Alshammari</span>
+    </footer>
+  </main>
+
+  <div class="modal" id="modal">
+    <div class="dialog">
+      <h2>Welcome to GreenLab</h2>
+      <input id="email" type="email" placeholder="Email address">
+      <button class="btn signin" id="emailLogin">Send secure email link</button>
+      <button class="btn" id="googleLogin">Continue with Google</button>
+      <button class="btn" id="close">Close</button>
+      <p class="status" id="status"></p>
+    </div>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+  <script src="auth-config.js"></script>
+  <script src="gamification.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>

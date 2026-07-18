@@ -1,0 +1,75 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Specialist Puzzles | GreenLab</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <main class="wrap">
+    <header class="top">
+      <a class="brand" href="index.html">
+        <svg class="bulb" viewBox="0 0 48 48">
+          <path fill="#2ad59b" d="M24 4C14.6 4 7 11.5 7 20.7c0 6.2 3.2 10.2 7.3 13.8 1.5 1.3 2.2 3.1 2.2 5v.5h15v-.5c0-1.9.8-3.7 2.2-5C37.8 30.9 41 26.9 41 20.7 41 11.5 33.4 4 24 4Z"/>
+          <path fill="#087c5c" d="M18 41h12v2c0 1.1-.9 2-2 2h-8c-1.1 0-2-.9-2-2v-2Zm-1-6h14v4H17z"/>
+        </svg>
+        <b>GREEN</b>LAB
+      </a>
+      <div>
+        <button class="btn signin" id="login">Sign in</button>
+      </div>
+    </header>
+
+    <div id="gamebar"></div>
+
+    <section class="hero">
+      <small>LEARN BY DOING</small>
+      <h1 id="title">SOC Analyst Puzzle</h1>
+      <p id="intro">Match each action to the correct situation.</p>
+    </section>
+
+    <nav class="tabs">
+      <a class="tab network" href="index.html#network">Network</a>
+      <button class="tab soc active" data-i="0">SOC</button>
+      <button class="tab cloud" data-i="1">Cloud</button>
+      <button class="tab ai" data-i="2">AI</button>
+      <button class="tab dev" data-i="3">DevSecOps</button>
+    </nav>
+
+    <section class="layout">
+      <article class="panel">
+        <h2>Scenario board</h2>
+        <div class="zones" id="zones"></div>
+      </article>
+      <aside class="panel">
+        <h2>Actions to place</h2>
+        <div id="cards"></div>
+        <button class="check" id="check">Check answer</button>
+        <div id="feedback"></div>
+      </aside>
+    </section>
+
+    <footer class="about">
+      <b>Dr. Abeer Alshammari, CISSP, CISM</b><br>
+      IT Audit &amp; GRC Consultant · <a href="about.html">About the creator</a> · Abeer GRC Platform · Dr. A Tech daily cybersecurity newsletter
+    </footer>
+  </main>
+
+  <div class="modal" id="modal">
+    <div class="dialog">
+      <h2>Welcome to GreenLab</h2>
+      <input id="email" type="email" placeholder="Email address">
+      <button class="btn signin" id="emailLogin">Send secure email link</button>
+      <button class="btn" id="googleLogin">Continue with Google</button>
+      <button class="btn" id="close">Close</button>
+      <p class="status" id="status"></p>
+    </div>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+  <script src="auth-config.js"></script>
+  <script src="gamification.js"></script>
+  <script src="specialist.js"></script>
+</body>
+</html>
