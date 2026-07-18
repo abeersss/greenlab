@@ -46,6 +46,14 @@ create trigger on_auth_user_created
   after insert on auth.users
   for each row execute function public.handle_new_user();
 
+-- Backfill: the trigger above only fires for future signups. Anyone who
+-- signed up before this migration ran has no profiles row yet, which
+-- makes them invisible to the leaderboard view below. Safe to re-run.
+insert into public.profiles (id, display_name)
+select id, coalesce(split_part(email, '@', 1), 'Learner')
+from auth.users
+on conflict (id) do nothing;
+
 -- 2. Puzzle completions: one row per learner per puzzle. XP is only
 --    awarded the first time a given puzzle is solved so replaying for
 --    practice doesn't inflate the leaderboard.
