@@ -60,11 +60,16 @@ on conflict (id) do nothing;
 create table if not exists public.puzzle_completions (
   id bigint generated always as identity primary key,
   user_id uuid not null references auth.users(id) on delete cascade,
-  puzzle_key text not null check (puzzle_key in ('network','soc','cloud','ai','dev')),
+  puzzle_key text not null,
   xp_awarded int not null default 50,
   completed_at timestamptz not null default now(),
   unique (user_id, puzzle_key)
 );
+
+-- No CHECK constraint on puzzle_key: the room library keeps growing
+-- (currently 6 domains x 3 rooms, e.g. 'soc-1', 'network-2', 'edr-3'),
+-- so the set of valid keys lives in the client's room data, not the DB.
+alter table public.puzzle_completions drop constraint if exists puzzle_completions_puzzle_key_check;
 
 alter table public.puzzle_completions enable row level security;
 

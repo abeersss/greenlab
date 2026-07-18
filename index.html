@@ -27,60 +27,52 @@
     <section class="hero" id="home">
       <small id="tag">LEARN BY DOING</small>
       <h1 id="head">Cybersecurity learning, made playful.</h1>
-      <p id="intro">Simple visual puzzles for safe cybersecurity practice.</p>
+      <p id="intro">Visual, hands-on puzzles across six security paths &mdash; more rooms added every week.</p>
     </section>
 
     <nav class="nav">
-      <a href="#network">Network Security</a>
-      <a href="#paths">SOC · Cloud · AI · DevSecOps</a>
+      <a href="#paths" id="pathsNavLabel">Explore all paths</a>
     </nav>
 
-    <section class="section" id="network">
-      <h2 id="networkTitle">Network Security Puzzle</h2>
-      <p id="networkIntro">Drag each control to its best location in the network diagram.</p>
-      <div class="network">
-        <article class="panel">
-          <div class="board">
-            <div class="flow">
-              <div class="node">
-                <div class="cloud">☁ INTERNET</div>
-                <div class="drop" data-a="Firewall">Gateway</div>
-                <div class="device">📡</div><b>Router</b>
-              </div>
-              <div class="node">
-                <div class="device">🔀</div><b>Core switch</b>
-                <div class="drop" data-a="VLAN">Employee groups</div>
-              </div>
-              <div class="dmz">
-                DMZ AREA
-                <div class="drop" data-a="DMZ">Public services</div>
-                🌐 Web app &nbsp; 🗄️ Server
-                <div class="drop" data-a="WAF">Web protection</div>
-              </div>
-            </div>
-            <div class="floors">
-              <div class="floor">🖥️ Floor 1</div>
-              <div class="floor">💻 Floor 2</div>
-              <div class="floor">🧑‍💻 Floor 3</div>
-            </div>
-          </div>
-        </article>
-        <aside class="panel">
-          <h2 id="controlTitle">Security controls</h2>
-          <div id="cards"></div>
-          <button class="check" id="check">Check answer</button>
-          <div id="feedback"></div>
-        </aside>
-      </div>
-    </section>
-
     <section class="section" id="paths">
-      <h2 id="pathTitle">Specialist learning paths</h2>
+      <h2 id="pathTitle">Learning paths</h2>
       <div class="paths">
-        <a class="path" href="specialist-puzzles.html?path=soc">🔎 SOC Analyst<br><small>Alert triage</small></a>
-        <a class="path" href="specialist-puzzles.html?path=cloud">☁ Cloud Security<br><small>Data &amp; identity</small></a>
-        <a class="path" href="specialist-puzzles.html?path=ai">🤖 AI Security<br><small>Safe AI use</small></a>
-        <a class="path" href="specialist-puzzles.html?path=dev">⚙️ DevSecOps<br><small>Secure delivery</small></a>
+        <a class="path" style="--c:#ff5d6c" href="specialist-puzzles.html?path=soc">
+          <span class="path-icon">🔎</span>
+          <b>SOC Analyst</b>
+          <small>Alert triage &amp; incident response</small>
+          <span class="room-count">3 rooms</span>
+        </a>
+        <a class="path" style="--c:#3b82f6" href="specialist-puzzles.html?path=network">
+          <span class="path-icon">🌐</span>
+          <b>Network Security</b>
+          <small>Perimeter, remote access &amp; wireless</small>
+          <span class="room-count">3 rooms</span>
+        </a>
+        <a class="path" style="--c:#a855f7" href="specialist-puzzles.html?path=ai">
+          <span class="path-icon">🤖</span>
+          <b>AI Security</b>
+          <small>Safe AI use &amp; governance</small>
+          <span class="room-count">3 rooms</span>
+        </a>
+        <a class="path" style="--c:#22c1d6" href="specialist-puzzles.html?path=cloud">
+          <span class="path-icon">☁️</span>
+          <b>Cloud Security</b>
+          <small>Identity, data &amp; configuration</small>
+          <span class="room-count">3 rooms</span>
+        </a>
+        <a class="path" style="--c:#f2a93b" href="specialist-puzzles.html?path=devsecops">
+          <span class="path-icon">⚙️</span>
+          <b>DevSecOps</b>
+          <small>Secure build &amp; release</small>
+          <span class="room-count">3 rooms</span>
+        </a>
+        <a class="path" style="--c:#ec4899" href="specialist-puzzles.html?path=edr">
+          <span class="path-icon">🛡️</span>
+          <b>EDR</b>
+          <small>Endpoint detection &amp; response</small>
+          <span class="room-count">3 rooms</span>
+        </a>
       </div>
     </section>
 
@@ -95,7 +87,7 @@
       <a href="about.html">About the creator</a> ·
       <a href="https://abeergrc.netlify.app/" target="_blank">Abeer GRC Platform</a> ·
       <a href="https://dratech.netlify.app/" target="_blank">Dr. A Tech daily cybersecurity newsletter</a><br>
-      <span style="color:#66839c">© 2026 All rights reserved to Dr. Abeer Alshammari</span>
+      <span style="color:var(--muted)">© 2026 All rights reserved to Dr. Abeer Alshammari</span>
     </footer>
   </main>
 

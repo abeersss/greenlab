@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width,initial-scale=1">
-  <title>Specialist Puzzles | GreenLab</title>
+  <title>Paths | GreenLab</title>
   <link rel="stylesheet" href="styles.css">
 </head>
 <body>
@@ -25,34 +25,29 @@
 
     <section class="hero">
       <small>LEARN BY DOING</small>
-      <h1 id="title">SOC Analyst Puzzle</h1>
-      <p id="intro">Match each action to the correct situation.</p>
+      <h1 id="puzzleTitle">Loading...</h1>
+      <p id="puzzleIntro"></p>
     </section>
 
-    <nav class="tabs">
-      <a class="tab network" href="index.html#network">Network</a>
-      <button class="tab soc active" data-i="0">SOC</button>
-      <button class="tab cloud" data-i="1">Cloud</button>
-      <button class="tab ai" data-i="2">AI</button>
-      <button class="tab dev" data-i="3">DevSecOps</button>
-    </nav>
+    <nav class="tabs" id="tabs"></nav>
+    <div class="rooms" id="rooms"></div>
 
     <section class="layout">
       <article class="panel">
         <h2>Scenario board</h2>
-        <div class="zones" id="zones"></div>
+        <div id="board"></div>
       </article>
-      <aside class="panel">
+      <aside class="panel" id="cardsPanel">
         <h2>Actions to place</h2>
         <div id="cards"></div>
         <button class="check" id="check">Check answer</button>
-        <div id="feedback"></div>
+        <div id="feedback" class="feedback"></div>
       </aside>
     </section>
 
     <footer class="about">
       <b>Dr. Abeer Alshammari, CISSP, CISM</b><br>
-      IT Audit &amp; GRC Consultant · <a href="about.html">About the creator</a> · Abeer GRC Platform · Dr. A Tech daily cybersecurity newsletter
+      IT Audit &amp; GRC Consultant · <a href="about.html">About the creator</a> · <a href="index.html">Home</a>
     </footer>
   </main>
 

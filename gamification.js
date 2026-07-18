@@ -13,11 +13,12 @@
   } catch (e) {}
 
   const BADGES = [
-    { key: 'network', icon: '🌐', name: 'Network Defender' },
     { key: 'soc', icon: '🔎', name: 'SOC Analyst' },
-    { key: 'cloud', icon: '☁️', name: 'Cloud Guardian' },
+    { key: 'network', icon: '🌐', name: 'Network Defender' },
     { key: 'ai', icon: '🤖', name: 'AI Sentinel' },
-    { key: 'dev', icon: '⚙️', name: 'DevSecOps Engineer' }
+    { key: 'cloud', icon: '☁️', name: 'Cloud Guardian' },
+    { key: 'devsecops', icon: '⚙️', name: 'DevSecOps Engineer' },
+    { key: 'edr', icon: '🛡️', name: 'EDR Responder' }
   ];
 
   const levelFor = xp => Math.floor(xp / 100) + 1;
@@ -49,13 +50,13 @@
     if (error || !completions) { bar.innerHTML = ''; return; }
 
     const totalXp = completions.reduce((sum, c) => sum + c.xp_awarded, 0);
-    const earnedKeys = new Set(completions.map(c => c.puzzle_key));
     const dateSet = new Set(completions.map(c => dateKey(c.completed_at)));
     const streak = computeStreak(dateSet);
 
-    const badgesHtml = BADGES.map(b =>
-      '<span class="badge' + (earnedKeys.has(b.key) ? ' earned' : '') + '" title="' + b.name + '">' + b.icon + '</span>'
-    ).join('');
+    const badgesHtml = BADGES.map(b => {
+      const earned = completions.some(c => c.puzzle_key.indexOf(b.key + '-') === 0);
+      return '<span class="badge' + (earned ? ' earned' : '') + '" title="' + b.name + '">' + b.icon + '</span>';
+    }).join('');
 
     bar.innerHTML =
       '<div class="panel gamebar">' +
