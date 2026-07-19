@@ -249,6 +249,18 @@ body {
   border: 1px solid rgba(255, 255, 255, .15);
 }
 
+.puzzle-actions {
+  display: flex;
+  gap: 8px;
+  margin-top: 10px;
+}
+
+.puzzle-actions .check,
+.puzzle-actions .btn {
+  flex: 1;
+  margin-top: 0;
+}
+
 .check {
   background: var(--green);
   border: 0;
@@ -545,6 +557,14 @@ body {
   gap: 22px;
   flex-wrap: wrap;
   padding: 14px 20px;
+}
+
+.guser {
+  font-size: 13px;
+  font-weight: bold;
+  color: var(--text);
+  padding-right: 14px;
+  border-right: 1px solid var(--border);
 }
 
 .gstat {

@@ -311,3 +311,5 @@ $('check').onclick = () => {
   $('feedback').textContent = s === total ? 'Excellent! +50 XP' : s + ' of ' + total + ' are correct.';
   if (s === total && window.GreenLabGame) window.GreenLabGame.recordCompletion(r.id, 50);
 };
+
+$('reset').onclick = () => renderPuzzle();

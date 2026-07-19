@@ -60,6 +60,7 @@
 
     bar.innerHTML =
       '<div class="panel gamebar">' +
+        '<div class="guser">👤 ' + session.user.email + '</div>' +
         '<div class="gstat"><b>Level ' + levelFor(totalXp) + '</b><small>' + totalXp + ' XP</small></div>' +
         '<div class="gstat"><b>' + streak + ' 🔥</b><small>day streak</small></div>' +
         '<div class="gbadges">' + badgesHtml + '</div>' +
